@@ -6,6 +6,8 @@ import {
 } from '@backstage/core';
 import { AppSidebar } from './sidebar';
 
+require('typeface-metropolis')
+
 const app = createApp({
   plugins: Object.values(plugins),
 });

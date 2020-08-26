@@ -8,7 +8,6 @@ import {
   ListItemText,
   Link,
 } from '@material-ui/core';
-import Timer from '../Timer';
 import {
   Content,
   InfoCard,
@@ -19,16 +18,28 @@ import {
   SupportButton,
 } from '@backstage/core';
 
+const headerStyle = {
+  minHeight: '59px',
+  paddingTop: '12px',
+  paddingBottom: '12px',
+  fontWeight: 'var(--clr-header-title-font-weight, 400)',
+  fontFamily: "var(--clr-header-title-font-family, Metropolis, 'Avenir Next', 'Helvetica Neue', Arial, sans-serif)",
+  fontSize: ".8rem",
+  letterSpacing: ".01em",
+  lineHeight: "3rem",
+  textDecoration: "none",
+}
+
 const WelcomePage: FC<{}> = () => {
   const profile = { givenName: '' };
 
   return (
     <Page theme={pageTheme.home}>
       <Header
+        style={headerStyle}
         title={`Welcome ${profile.givenName || 'to Backstage'}`}
         subtitle="Some quick intro and links."
       >
-        <Timer />
       </Header>
       <Content>
         <ContentHeader title="Getting Started">
